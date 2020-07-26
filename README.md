@@ -9,9 +9,9 @@ Clicking one of the 2 buttons triggers a function to generate a password. It ent
     LinkedIn:       (TBA)
 
 ### -Notes:
-1. The code heavily relies on python's **random** libary to generate characters; I am unaware how truely random the libary's logic is.
+1. The code heavily relies on python's **random** libary to generate characters; I am unaware how truely random the library's logic is.
 2.
 
 ### -Ways-to-Improve-Code:
-1. While very unlikely, it is possible that code continues to generate passwords that fail the check everytime. Creating a failsafe to prevent code from being stuck in an endless loop (have it exit the loop after 3 or 4 fails and display an error message)
+1. While very unlikely, it is possible that code continues to generate passwords that fail the check everytime. Create a failsafe to prevent code from being stuck in an endless loop (have it exit the loop after 3 or 4 fails and display an error message)
 2. 
