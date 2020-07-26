@@ -1,4 +1,4 @@
-# -Project-3-PYTHON-Password-Generator (Project 3)
+# -Project-3-PYTHON-Password-Generator (Project 3):
 A simple Python application with GUI. Upon running, users are able to click 2 buttons that will randomly generate a password. The passwords displayed will always have 1 atleast 1 captial letter, 1 lowercase letter, 1 symbol, and 1 number.
 
 ## -How-it-Works (summary):
