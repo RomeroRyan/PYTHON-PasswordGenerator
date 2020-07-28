@@ -1,6 +1,7 @@
 # Project Began July 20 2020 by Ryan Romero
 from tkinter import *
 import random
+
 # ----- DICTIONARIES -----
 SymbolDict = {
     1: "!",
@@ -86,27 +87,29 @@ LowerDict = {
     26: "z",
 }
 
+
 # ----- HELPER FUNCTIONS ------
+# return random number
 def RandomNum():
     num = random.randint(0,9)
     return str(num)
 
-
+# return random symbol from dictionary
 def RandomSymbol():
-    #   !#$%&()*+-/?:;<>=@[]^{}
     randomInt1 = random.randint(1, 23)
     return SymbolDict[randomInt1]
 
-
+# returns random capital letter from dictionary
 def RandomLetterUpper():
     randomInt2 = random.randint(1,26)
     return UpperDict[randomInt2]
 
-
+# return random lowercase letter from dictionary
 def RandomLetterLower():
     randomInt3 = random.randint(1, 26)
     return LowerDict[randomInt3]
 
+# checks if string has atleast 1 number
 def HasNumber(password):
     if( any(char.isdigit() for char in password) ):
         return True
@@ -114,6 +117,7 @@ def HasNumber(password):
         print("failed Number Test")
         return False
 
+# checks if string has atleast 1 symbol   
 def HasSymbol(password):
     if( any(not char.isalnum() for char in password) ):
         return True
@@ -121,6 +125,7 @@ def HasSymbol(password):
         print("failed Symbol Test")
         return False
 
+# checks if string has atleast 1 capital letter      
 def HasUpper(password):
     if( any(char.isupper() for char in password) ):
         return True
@@ -128,6 +133,7 @@ def HasUpper(password):
         print("failed Upper Test")
         return False
 
+# check if string has atleast 1 lowercase letter    
 def HasLower(password):
     if (any(char.islower() for char in password)):
         return True
@@ -137,20 +143,24 @@ def HasLower(password):
 
 
 # ----- MAIN FUNCTIONS -----
+# this function generates the password
 def GeneratePassword(size):
-
+    
+    # flag used to exit function loop. if password has atleast 1 num/symbol/upper/lower, flag is set off and exits loop
+    # otherwise starts over and generates a new password
     flag = 0
     while(flag == 0):
 
-        # clear passwordHolder and charHolder from previous password
+        # clear passwordHolder and charHolder
         passwordHolder = ""
         charHolder = ""
 
-        # generates 12 chars for password
+        # main loop. Generates random char every iteration
         count = 0
         while(count < size):
+            # this random num used to determine if char generated is a num, symbol, upper, or lowercase
             randomVal = random.randint(1, 4)
-
+            
             if(randomVal == 1):
                 charHolder = RandomNum()
             elif(randomVal == 2):
@@ -161,11 +171,12 @@ def GeneratePassword(size):
                 charHolder = RandomLetterLower()
             else:
                 charHolder = "  "
-
+    
+            # add the generated char to the string holding full password
             passwordHolder = passwordHolder + str(charHolder)
             count = count + 1
 
-        # TODO: check password has 1 of each, if so, change flag to true
+        #check password has 1 of each, if so, change flag to true and exit function loop
         if(HasNumber(passwordHolder)):
             if(HasSymbol(passwordHolder)):
                 if(HasUpper(passwordHolder)):
@@ -174,6 +185,7 @@ def GeneratePassword(size):
 
     # print out generated password onto window
     thePassword.config(text=passwordHolder)
+
 
 # ----- GUI CODE -----
 # create the GUI window
@@ -193,7 +205,7 @@ thePassword = Label(topFrame, text="-sample-")
 emptyLabel = Label(topFrame, text = " ")
 
 # button
-generateButton = Button(botFrame, text="Generate!", command= lambda: GeneratePassword(12))                              # note to self: Lamda allows method to be called with an argument
+generateButton = Button(botFrame, text="Generate!", command= lambda: GeneratePassword(12))                # note to self: Lamda allows method to be called with an argument
 generateButton2 = Button(botFrame, text= "Generate Long!", command= lambda: GeneratePassword(16))
 
 # organize GUI
