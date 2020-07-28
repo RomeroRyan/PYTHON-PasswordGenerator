@@ -6,7 +6,7 @@ Clicking one of the 2 buttons triggers a function to generate a password. It ent
 
 ### -CONTACTS:
     Ryan Romero     r.romero.softwaredev@gmail.com
-    LinkedIn:       (TBA)
+    LinkedIn:       https://www.linkedin.com/in/ryan-romero-9b054a178/
 
 ### -Notes:
 1. The code heavily relies on python's **random** libary to generate characters; I am unaware how truely random the library's logic is.
