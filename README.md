@@ -1,17 +1,19 @@
-# -Project-3-PYTHON-Password-Generator (Project 3):
-A simple Python application with GUI. Upon running, users are able to click 2 buttons that will randomly generate a password. The passwords displayed will always have 1 atleast 1 captial letter, 1 lowercase letter, 1 symbol, and 1 number.
+# PYTHON Password Generator
+- Ryan Romero         r.romero.softwaredev@gmail.com
 
-## -How-it-Works (summary):
-Clicking one of the 2 buttons triggers a function to generate a password. It enters a loop where a random number will first choose if the character generating in current loop iteration will be a number, symbol, captial, or lowercase. Each of the 4 categories has a list of all possible generated characters saved in a dictionary data type. A second random number is used to choose the corresponding character from the respective dictionary and saved it onto a string. Once it exit the loop, the string is holding the randomly generated password which goes through 4 different checks which make sures that the password includes atleast 1 number, symbol, captial and lowercase. If all 4 check are successful, it displays the generated password on the GUI. If any of the 4 check failed, it cycles back to the top of the function and generates a new password untill the string passes all 4 checks.
+# Project Description
+A simple password generator applciation with GUI. Upon running, users are able to click buttons that will randomly generate a password. The passwords displayed will always have at least 1 captial letter, 1 lowercase letter, 1 symbol, and 1 number; these characteristics of strong passwords will always be met when a new password is generated.
 
-### -CONTACTS:
-    Ryan Romero     r.romero.softwaredev@gmail.com
-    LinkedIn:       https://www.linkedin.com/in/ryan-romero-9b054a178/
+# How it Works (Summary)
+user has a choice of 2 buttons upon running the application; both buttons generate password, the only difference is the password length. Clicking one of the 2 buttons triggers a function to generate a password. It enters a loop where a random number will first choose if the character generating in current loop iteration will be a number, symbol, captial, or lowercase. Each of the 4 categories has a list of all possible generated characters saved in a dictionary data type. A second random number is used to choose the corresponding character from the respective dictionary and saved it onto a string. Once it exit the loop, the string is holding the randomly generated password which goes through 4 different checks which make sures that the password includes atleast 1 number, symbol, captial and lowercase. If all 4 check are successful, it displays the generated password on the GUI. If any of the 4 check failed, it cycles back to the top of the function and generates a new password untill the string passes all 4 checks.
 
-### -Notes:
-1. The code heavily relies on python's **random** libary to generate characters; I am unaware how truely random the library's logic is.
-2.
+# How to Run
+1. Download the code from the repository
+2. run ```PasswordGen.py```
+
+# Limitations
+TODO
 
 ### -Ways-to-Improve-Code:
-1. While very unlikely, it is possible that code continues to generate passwords that fail the check everytime. Create a failsafe to prevent code from being stuck in an endless loop (have it exit the loop after 3 or 4 fails and display an error message)
-2. 
+1. The code heavily relies on python's "**random**" libary to generate characters; Im aware that random libraries arent truely random when it comes to computer and could affect the security of the passwords generated
+2. While extremely unlikely, it is possible that code continues to generate passwords that fail the password strength checks. This could lead to a endless loop if the current user is extremely unlucky and continues to generate passwords that are too weak. To prevent this endless loop, we can implement code that will stop generating new passwords after multiple fail attempts.
