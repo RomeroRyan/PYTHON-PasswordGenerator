@@ -14,6 +14,6 @@ user has a choice of 2 buttons upon running the application; both buttons genera
 # Limitations
 TODO
 
-### -Ways-to-Improve-Code:
+# Ways to Improve
 1. The code heavily relies on python's "**random**" libary to generate characters; Im aware that random libraries arent truely random when it comes to computer and could affect the security of the passwords generated
 2. While extremely unlikely, it is possible that code continues to generate passwords that fail the password strength checks. This could lead to a endless loop if the current user is extremely unlucky and continues to generate passwords that are too weak. To prevent this endless loop, we can implement code that will stop generating new passwords after multiple fail attempts.
